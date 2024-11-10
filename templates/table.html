@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency Table</title>
+    <link rel="stylesheet" href="/static/table.css">
+</head>
+<body>
+    <h1>Top {{ top_n }} Word Frequencies in URL: {{ url }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Word</th>
+                <th>Frequency</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word, freq in word_data %}
+            <tr>
+                <td>{{ loop.index }}</td> <!-- This will display the serial number -->
+                <td>{{ word }}</td>
+                <td>{{ freq }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Go Back</a>
+</body>
+</html>
